@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="60 seconds">
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%date %X{orgJrnNo} [%thread] %-5level %logger{3} -%m%n
+			</pattern>
+		</encoder>
+	</appender>
+	<appender name="ERROR"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/error.log</file>
+		<encoder>
+			<pattern>%date %X{orgJrnNo} [%thread] %-5level %logger{3} -%m%n
+			</pattern>
+		</encoder>
+		<filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+			<level>ERROR</level>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.path}/error-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+	<appender name="ROOT"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/root.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>%date %X{orgJrnNo} [%thread] %-5level %logger{3} -%m%n
+			</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.path}/root-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+	<appender name="BIZ"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/biz.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>%date %X{orgJrnNo} [%thread] %-5level %logger{3} -%m%n
+			</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.path}/biz-%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+	<appender name="DAO"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/dao.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>%date %X{orgJrnNo} [%thread] %-5level %logger{3} -%m%n
+			</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.path}/dao-%d{yyyy-MM-dd}.log</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+	<appender name="CONSUMER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/consumer.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>%date %X{orgJrnNo} [%thread] %-5level %logger{3} -%m%n
+			</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.path}/consumer-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+	<appender name="PROVIDER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/provider.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>%date %X{orgJrnNo} [%thread] %-5level %logger{3} -%m%n
+			</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.path}/provider-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+	<appender name="CONTROLLER"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${log.path}/controller.log</file>
+		<append>true</append>
+		<encoder>
+			<pattern>%date %X{orgJrnNo} [%thread] %-5level %logger{3} -%m%n
+			</pattern>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${log.path}/controller-%d{yyyy-MM-dd}.log
+			</fileNamePattern>
+		</rollingPolicy>
+	</appender>
+
+	<logger name="com.jiedaibao.microloan.biz" level="${log.level}">
+		<appender-ref ref="BIZ" />
+		<appender-ref ref="ERROR" />
+	</logger>
+	<logger name="com.jiedaibao.microloan.common" level="${log.level}">
+		<appender-ref ref="BIZ" />
+		<appender-ref ref="ERROR" />
+	</logger>
+	<logger name="com.jiedaibao.microloan.dao" level="${log.level}">
+		<appender-ref ref="DAO" />
+		<appender-ref ref="ERROR" />
+	</logger>
+	<logger name="com.jiedaibao.microloan.consumer" level="${log.level}">
+		<appender-ref ref="CONSUMER" />
+		<appender-ref ref="ERROR" />
+	</logger>
+	<logger name="com.jiedaibao.microloan.provider" level="${log.level}">
+		<appender-ref ref="PROVIDER" />
+		<appender-ref ref="ERROR" />
+	</logger>
+	<logger name="com.jiedaibao.microloan.web" level="${log.level}">
+		<appender-ref ref="CONTROLLER" />
+		<appender-ref ref="ERROR" />
+	</logger>
+
+	<root level="${log.level}">
+		<appender-ref ref="ROOT" />
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
