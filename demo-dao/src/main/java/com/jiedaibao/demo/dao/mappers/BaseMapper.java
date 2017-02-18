@@ -34,6 +34,6 @@ public interface BaseMapper<T> {
      *
      * @param id 
      */
-    T getById(String id);
+    T getById(int id);
 
 }

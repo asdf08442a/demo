@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.jiedaibao.demo.dao.mappers.UserMapper">
+
+    <resultMap type="com.jiedaibao.demo.dao.bean.User"
+               id="UserResult">
+        <result column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="address" property="addr"/>
+        <result column="age" property="age"/>
+        <result column="biz_date" property="bizDate"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <sql id="baseColumns">
+		id,name,address,age,biz_date,create_time,update_time
+	</sql>
+
+    <insert id="insert" parameterType="com.jiedaibao.demo.dao.bean.User" useGeneratedKeys="true" keyProperty="id">
+		insert into t_user(name,address,age,biz_date) values(#{name},#{addr},#{age},#{bizDate})
+	</insert>
+
+    <insert id="batchInsert" parameterType="java.util.List">
+        <selectKey resultType="java.lang.Integer" keyProperty="id" order="AFTER">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into t_user(name,address,age,biz_date) values
+        <foreach collection="list" item="item" separator=",">
+            (#{item.name},#{item.addr},#{item.age},#{item.bizDate})
+        </foreach>
+    </insert>
+
+    <update id="update" parameterType="com.jiedaibao.demo.dao.bean.User">
+        update t_user
+        <trim prefix="set" suffixOverrides=",">
+            <if test="name!=null">name=#{name},</if>
+            <if test="addr!=null">address=#{addr},</if>
+            <if test="age!=null">age=#{age},</if>
+            <if test="bizDate!=null">biz_date=#{bizDate},</if>
+        </trim>
+        where id=#{id}
+    </update>
+
+    <select id="getById" parameterType="int" resultMap="UserResult">
+        select
+        <include refid="baseColumns"/>
+        from t_user where id=#{id}
+    </select>
+
+</mapper>
