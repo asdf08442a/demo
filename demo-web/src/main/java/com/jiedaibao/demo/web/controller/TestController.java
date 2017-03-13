@@ -1,5 +1,6 @@
 package com.jiedaibao.demo.web.controller;
 
+import java.sql.SQLException;
 import java.util.Date;
 
 import com.jiedaibao.demo.biz.service.TestService;
@@ -30,6 +31,7 @@ public class TestController {
         params.setFormatTime(now);
         params.setOriginTime(now);
         response.setData(params);
+//        throw new SQLException("aaa");
         return response;
     }
 }

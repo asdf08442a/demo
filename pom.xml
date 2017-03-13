@@ -235,13 +235,6 @@
 				<version>3.15.0-GA</version>
 			</dependency>
 
-			<!-- redis -->
-			<dependency>
-				<groupId>redis.clients</groupId>
-				<artifactId>jedis</artifactId>
-				<version>2.1.0</version>
-			</dependency>
-
 			<!-- mybatis -->
 			<dependency>
 				<groupId>org.mybatis</groupId>
@@ -382,6 +375,28 @@
 				<version>5.3.4.Final</version>
 			</dependency>
 
+			<dependency>
+				<groupId>redis.clients</groupId>
+				<artifactId>jedis</artifactId>
+				<version>2.8.0</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-redis</artifactId>
+				<version>1.6.4.RELEASE</version>
+			</dependency>
+
+			<dependency>
+				<groupId>com.dyuproject.protostuff</groupId>
+				<artifactId>protostuff-core</artifactId>
+				<version>1.0.8</version>
+			</dependency>
+			<dependency>
+				<groupId>com.dyuproject.protostuff</groupId>
+				<artifactId>protostuff-runtime</artifactId>
+				<version>1.0.8</version>
+			</dependency>
+
 		</dependencies>
 	</dependencyManagement>
 
@@ -411,17 +426,6 @@
 				<version>3.0.0</version>
 				<configuration>
 					<failOnMissingWebXml>false</failOnMissingWebXml>
-				</configuration>
-			</plugin>
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<version>2.1</version>
-				<configuration>
-					<descriptors>
-						<descriptor>assembly.xml</descriptor>
-					</descriptors>
-					<finalName>demo</finalName>
 				</configuration>
 			</plugin>
 			<plugin>
@@ -462,25 +466,14 @@
 
 	<profiles>
 		<profile>
-			<id>local</id>
-			<properties>
-				<app.env>local</app.env>
-			</properties>
-			<!-- 默认激活开发配制，使用loanplatform-local.properties来替换设置过虑的资源文件中的${key} -->
-			<activation>
-				<activeByDefault>true</activeByDefault>
-			</activation>
-			<build>
-				<filters>
-					<filter>../profiles/${app.env}/demo-local.properties</filter>
-				</filters>
-			</build>
-		</profile>
-		<profile>
 			<id>dev</id>
 			<properties>
 				<app.env>dev</app.env>
 			</properties>
+			<!-- 默认激活开发配制，使用demo-dev.properties来替换设置过虑的资源文件中的${key} -->
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
 			<build>
 				<filters>
 					<filter>../profiles/${app.env}/demo-dev.properties</filter>

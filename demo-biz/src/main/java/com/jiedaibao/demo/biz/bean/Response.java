@@ -3,7 +3,8 @@ package com.jiedaibao.demo.biz.bean;
 import java.io.Serializable;
 
 /**
- * 返回给前端统一相应体 created by jinzg on 2016年12月18日
+ * 返回给前端统一相应体
+ * created by jinzg on 2016年12月18日
  */
 public class Response implements Serializable {
 	private static final long serialVersionUID = -2018568289481468330L;

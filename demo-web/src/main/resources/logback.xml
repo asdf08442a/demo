@@ -98,27 +98,27 @@
 		</rollingPolicy>
 	</appender>
 
-	<logger name="com.jiedaibao.microloan.biz" level="${log.level}">
+	<logger name="com.jiedaibao.demo.biz" level="${log.level}">
 		<appender-ref ref="BIZ" />
 		<appender-ref ref="ERROR" />
 	</logger>
-	<logger name="com.jiedaibao.microloan.common" level="${log.level}">
+	<logger name="com.jiedaibao.demo.common" level="${log.level}">
 		<appender-ref ref="BIZ" />
 		<appender-ref ref="ERROR" />
 	</logger>
-	<logger name="com.jiedaibao.microloan.dao" level="${log.level}">
+	<logger name="com.jiedaibao.demo.dao" level="${log.level}">
 		<appender-ref ref="DAO" />
 		<appender-ref ref="ERROR" />
 	</logger>
-	<logger name="com.jiedaibao.microloan.consumer" level="${log.level}">
+	<logger name="com.jiedaibao.demo.consumer" level="${log.level}">
 		<appender-ref ref="CONSUMER" />
 		<appender-ref ref="ERROR" />
 	</logger>
-	<logger name="com.jiedaibao.microloan.provider" level="${log.level}">
+	<logger name="com.jiedaibao.demo.provider" level="${log.level}">
 		<appender-ref ref="PROVIDER" />
 		<appender-ref ref="ERROR" />
 	</logger>
-	<logger name="com.jiedaibao.microloan.web" level="${log.level}">
+	<logger name="com.jiedaibao.demo.web" level="${log.level}">
 		<appender-ref ref="CONTROLLER" />
 		<appender-ref ref="ERROR" />
 	</logger>

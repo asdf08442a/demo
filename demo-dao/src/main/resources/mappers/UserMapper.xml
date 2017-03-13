@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.jiedaibao.demo.dao.mappers.UserMapper">
 
-    <resultMap type="com.jiedaibao.demo.dao.bean.User"
+    <resultMap type="com.jiedaibao.demo.dao.entity.User"
                id="UserResult">
         <result column="id" property="id"/>
         <result column="name" property="name"/>
@@ -17,7 +17,7 @@
 		id,name,address,age,biz_date,create_time,update_time
 	</sql>
 
-    <insert id="insert" parameterType="com.jiedaibao.demo.dao.bean.User" useGeneratedKeys="true" keyProperty="id">
+    <insert id="insert" parameterType="com.jiedaibao.demo.dao.entity.User" useGeneratedKeys="true" keyProperty="id">
 		insert into t_user(name,address,age,biz_date) values(#{name},#{addr},#{age},#{bizDate})
 	</insert>
 
@@ -31,7 +31,7 @@
         </foreach>
     </insert>
 
-    <update id="update" parameterType="com.jiedaibao.demo.dao.bean.User">
+    <update id="update" parameterType="com.jiedaibao.demo.dao.entity.User">
         update t_user
         <trim prefix="set" suffixOverrides=",">
             <if test="name!=null">name=#{name},</if>

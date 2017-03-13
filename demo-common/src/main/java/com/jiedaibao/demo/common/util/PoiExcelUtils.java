@@ -742,7 +742,7 @@ public class PoiExcelUtils {
      * @param excelPath excel的路径
      * @param skipRows 需要跳过的行数
      * @param columnCount 列数量
-     * @return List<String[]> 集合中每一个元素是一个数组，按单元格索引存储每个单元格的值，一个元素可以封装成一个需要的java bean
+     * @return List<String[]> 集合中每一个元素是一个数组，按单元格索引存储每个单元格的值，一个元素可以封装成一个需要的java entity
      * @throws Exception
      */
     public static List<String[]> readExcel(String excelPath, int skipRows, int columnCount) throws Exception {
@@ -755,7 +755,7 @@ public class PoiExcelUtils {
      * @param skipRows 需要跳过的行数
      * @param columnCount 列数量
      * @param sheetNo 要读取的sheet的索引，从0开始
-     * @return List<String[]> 集合中每一个元素是一个数组，按单元格索引存储每个单元格的值，一个元素可以封装成一个需要的java bean
+     * @return List<String[]> 集合中每一个元素是一个数组，按单元格索引存储每个单元格的值，一个元素可以封装成一个需要的java entity
      * @throws Exception
      */
     public static List<String[]> readExcel(String excelPath, int skipRows, int columnCount, int sheetNo) throws Exception {
@@ -768,7 +768,7 @@ public class PoiExcelUtils {
      * @param skipRows 需要跳过的行数
      * @param columnCount 列数量
      * @param noneCellValuePositionList 存储空值的单元格的坐标，每个坐标以x-y的形式拼接，如2-5表示第二行第五列
-     * @return List<String[]> 集合中每一个元素是一个数组，按单元格索引存储每个单元格的值，一个元素可以封装成一个需要的java bean
+     * @return List<String[]> 集合中每一个元素是一个数组，按单元格索引存储每个单元格的值，一个元素可以封装成一个需要的java entity
      * @throws Exception
      */
     public static List<String[]> readExcel(String excelPath, int skipRows, int columnCount, List<String> noneCellValuePositionList) throws Exception {
@@ -782,7 +782,7 @@ public class PoiExcelUtils {
      * @param columnCount 列数量
      * @param columnNumberForSkipValueValidateSet 不需要做空值验证的列的索引集合
      * @param noneCellValuePositionList 存储空值的单元格的坐标，每个坐标以x-y的形式拼接，如2-5表示第二行第五列
-     * @return List<String[]> 集合中每一个元素是一个数组，按单元格索引存储每个单元格的值，一个元素可以封装成一个需要的java bean
+     * @return List<String[]> 集合中每一个元素是一个数组，按单元格索引存储每个单元格的值，一个元素可以封装成一个需要的java entity
      * @throws Exception
      */
     public static List<String[]> readExcel(String excelPath, int skipRows, int columnCount, Set<Integer> columnNumberForSkipValueValidateSet,
@@ -797,7 +797,7 @@ public class PoiExcelUtils {
      * @param columnCount 列数量
      * @param sheetNo 要读取的sheet的索引，从0开始
      * @param noneCellValuePositionList 存储空值的单元格的坐标，每个坐标以x-y的形式拼接，如2-5表示第二行第五列
-     * @return List<String[]> 集合中每一个元素是一个数组，按单元格索引存储每个单元格的值，一个元素可以封装成一个需要的java bean
+     * @return List<String[]> 集合中每一个元素是一个数组，按单元格索引存储每个单元格的值，一个元素可以封装成一个需要的java entity
      * @throws Exception
      */
     public static List<String[]> readExcel(String excelPath, int skipRows, int columnCount, int sheetNo,
@@ -813,7 +813,7 @@ public class PoiExcelUtils {
      * @param sheetNo 要读取的sheet的索引，从0开始
      * @param columnNumberForSkipValueValidateSet 不需要做空值验证的列的索引集合
      * @param noneCellValuePositionList 存储空值的单元格的坐标，每个坐标以x-y的形式拼接，如2-5表示第二行第五列
-     * @return List<String[]> 集合中每一个元素是一个数组，按单元格索引存储每个单元格的值，一个元素可以封装成一个需要的java bean
+     * @return List<String[]> 集合中每一个元素是一个数组，按单元格索引存储每个单元格的值，一个元素可以封装成一个需要的java entity
      * @throws Exception
      */
     public static List<String[]> readExcel(String excelPath, int skipRows, int columnCount, int sheetNo,

@@ -11,7 +11,7 @@
 
 	<artifactId>demo-web</artifactId>
 	<packaging>war</packaging>
-	<name>demo-web Maven Webapp</name>
+	<name>demo-web</name>
 	<url>http://maven.apache.org</url>
 
 	<dependencies>

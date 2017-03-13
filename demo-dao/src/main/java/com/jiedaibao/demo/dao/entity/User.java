@@ -1,4 +1,4 @@
-package com.jiedaibao.demo.dao.bean;
+package com.jiedaibao.demo.dao.entity;
 
 import java.util.Date;
 

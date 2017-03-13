@@ -1,7 +1,8 @@
 package com.jiedaibao.demo.biz.service;
 
+import com.jiedaibao.demo.common.cache.RedisCache;
 import com.jiedaibao.demo.common.util.DateUtils;
-import com.jiedaibao.demo.dao.bean.User;
+import com.jiedaibao.demo.dao.entity.User;
 import com.jiedaibao.demo.dao.mappers.UserMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +19,8 @@ public class TestService {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private RedisCache redisCache;
 
     public void get(String id) {
         log.info("start:{}", System.nanoTime());
@@ -28,6 +31,8 @@ public class TestService {
         user.setBizDate(DateUtils.getTimeStampYmd());
         int ret = userMapper.insert(user);
         log.debug("insert result:{}", ret);
+
+        redisCache.putCache(user.getName(),user);
 
         user = userMapper.getById(user.getId());
         log.debug("getById result:{}", user);

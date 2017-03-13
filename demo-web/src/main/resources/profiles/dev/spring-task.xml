@@ -5,7 +5,7 @@
 						http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
 
 	<!-- 声明定时调度的任务  -->
-	<!--<bean id="taskControl" class="com.jiedaibao.microloan.biz.jyxd.quartz.TaskControl" />-->
+	<!--<entity id="taskControl" class="com.jiedaibao.microloan.biz.jyxd.quartz.TaskControl" />-->
 
 	<!--<task:scheduled-tasks>-->
 		<!--<task:scheduled ref="taskControl" method="testTask" cron="0/20 * * * * ?" />-->
