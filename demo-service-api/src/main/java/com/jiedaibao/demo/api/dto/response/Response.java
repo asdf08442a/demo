@@ -1,4 +1,4 @@
-package com.jiedaibao.demo.biz.bean;
+package com.jiedaibao.demo.api.dto.response;
 
 import java.io.Serializable;
 

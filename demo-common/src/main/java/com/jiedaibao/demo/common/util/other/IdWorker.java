@@ -1,4 +1,4 @@
-package com.jiedaibao.demo.common.other;
+package com.jiedaibao.demo.common.util.other;
 
 import java.net.SocketException;
 import java.util.HashSet;

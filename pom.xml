@@ -169,6 +169,11 @@
 			</dependency>
 			<dependency>
 				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+				<version>${spring_version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
 				<artifactId>spring-jdbc</artifactId>
 				<version>${spring_version}</version>
 			</dependency>
@@ -251,6 +256,11 @@
 						<artifactId>spring</artifactId>
 					</exclusion>
 				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>com.github.pagehelper</groupId>
+				<artifactId>pagehelper</artifactId>
+				<version>4.1.1</version>
 			</dependency>
 			<dependency>
 				<groupId>mysql</groupId>
@@ -368,13 +378,15 @@
 				<artifactId>standard</artifactId>
 				<version>1.1.2</version>
 			</dependency>
-			
+
+			<!-- hibernate-validator -->
 			<dependency>
 				<groupId>org.hibernate</groupId>
 				<artifactId>hibernate-validator</artifactId>
 				<version>5.3.4.Final</version>
 			</dependency>
 
+			<!-- redis -->
 			<dependency>
 				<groupId>redis.clients</groupId>
 				<artifactId>jedis</artifactId>
@@ -386,6 +398,7 @@
 				<version>1.6.4.RELEASE</version>
 			</dependency>
 
+			<!-- protostuff -->
 			<dependency>
 				<groupId>com.dyuproject.protostuff</groupId>
 				<artifactId>protostuff-core</artifactId>

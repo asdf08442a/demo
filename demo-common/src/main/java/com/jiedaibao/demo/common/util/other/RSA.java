@@ -1,4 +1,4 @@
-package com.jiedaibao.demo.common.other;
+package com.jiedaibao.demo.common.util.other;
 
 import java.security.Key;
 import java.security.KeyFactory;

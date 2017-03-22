@@ -324,7 +324,7 @@ public class DateUtils {
     /**
      * 将日期字符串转化为另一日期字符串。失败返回null。
      * @param date 旧日期字符串
-     * @param olddPattern 旧日期格式
+     * @param oldPattern 旧日期格式
      * @param newDateStyle 新日期风格
      * @return 新日期字符串
      */
@@ -445,7 +445,7 @@ public class DateUtils {
     /**
      * 增加日期的分钟。失败返回null。
      * @param date 日期
-     * @param dayAmount 增加数量。可为负数
+     * @param minuteAmount 增加数量。可为负数
      * @return 增加分钟后的日期
      */
     public static Date addMinute(Date date, int minuteAmount) {
@@ -455,7 +455,7 @@ public class DateUtils {
     /**
      * 增加日期的秒钟。失败返回null。
      * @param date 日期字符串
-     * @param dayAmount 增加数量。可为负数
+     * @param secondAmount 增加数量。可为负数
      * @return 增加秒钟后的日期字符串
      */
     public static String addSecond(String date, int secondAmount) {

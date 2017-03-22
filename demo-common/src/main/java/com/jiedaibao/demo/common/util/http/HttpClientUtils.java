@@ -68,7 +68,7 @@ public class HttpClientUtils {
             try {
                 EntityUtils.consume(entity);
             } catch (Exception ex) {
-                log.error("net io exception ", ex);
+                log.error("net io handler ", ex);
             }
         }
         if (responseContent == null) {
@@ -158,7 +158,7 @@ public class HttpClientUtils {
             try {
                 EntityUtils.consume(httpEntity);
             } catch (Exception ex) {
-                log.error("net io exception ", ex);
+                log.error("net io handler ", ex);
             }
         }
         return responseContent;
@@ -192,7 +192,7 @@ public class HttpClientUtils {
             try {
                 EntityUtils.consume(httpEntity);
             } catch (Exception ex) {
-                log.error("net io exception ", ex);
+                log.error("net io handler ", ex);
             }
         }
         return responseContent;

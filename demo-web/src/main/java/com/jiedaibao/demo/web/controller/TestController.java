@@ -1,17 +1,19 @@
 package com.jiedaibao.demo.web.controller;
 
-import java.sql.SQLException;
-import java.util.Date;
-
-import com.jiedaibao.demo.biz.service.TestService;
+import com.jiedaibao.demo.api.dto.request.Params;
+import com.jiedaibao.demo.api.dto.request.Request;
+import com.jiedaibao.demo.api.dto.response.Response;
+import com.jiedaibao.demo.biz.service.ITestService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jiedaibao.demo.biz.bean.Params;
-import com.jiedaibao.demo.biz.bean.Response;
+import javax.validation.Valid;
+import java.util.Date;
 
 @RestController
 @RequestMapping("/test")
@@ -19,19 +21,22 @@ public class TestController {
 
     private static final Logger log = LoggerFactory.getLogger(TestController.class);
     @Autowired
-    private TestService testService;
+    private ITestService testService;
 
     @RequestMapping(value = "/t")
-    public Response test() throws Exception {
+    public Response test() {
         log.info("start:{}", System.nanoTime());
         testService.get("1");
-        Response response = new Response();
         Params params = new Params();
-        Date now = new Date();
-        params.setFormatTime(now);
-        params.setOriginTime(now);
-        response.setData(params);
+        params.setFormatTime(new Date());
+        params.setOriginTime(new Date());
 //        throw new SQLException("aaa");
-        return response;
+        return new Response().success(params);
+    }
+
+    @RequestMapping(value = "/t")
+    public Response test1(@Valid @RequestBody Request request, BindingResult bindingResult) {
+        log.info("start:{}", System.currentTimeMillis());
+        return new Response().success();
     }
 }

@@ -1,9 +1,9 @@
-package com.jiedaibao.demo.biz.bean;
+package com.jiedaibao.demo.api.dto.request;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.io.Serializable;
 import java.util.Date;
-
-import com.fasterxml.jackson.annotation.JsonFormat;
 
 public class Params implements Serializable {
 	private static final long serialVersionUID = 6824672497013935827L;

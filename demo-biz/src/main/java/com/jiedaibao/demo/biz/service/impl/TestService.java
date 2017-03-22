@@ -1,5 +1,6 @@
-package com.jiedaibao.demo.biz.service;
+package com.jiedaibao.demo.biz.service.impl;
 
+import com.jiedaibao.demo.biz.service.ITestService;
 import com.jiedaibao.demo.common.cache.RedisCache;
 import com.jiedaibao.demo.common.util.DateUtils;
 import com.jiedaibao.demo.dao.entity.User;
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class TestService {
+public class TestService implements ITestService{
 
     private static final Logger log = LoggerFactory.getLogger(TestService.class);
 
@@ -22,6 +23,7 @@ public class TestService {
     @Autowired
     private RedisCache redisCache;
 
+    @Override
     public void get(String id) {
         log.info("start:{}", System.nanoTime());
         User user = new User();

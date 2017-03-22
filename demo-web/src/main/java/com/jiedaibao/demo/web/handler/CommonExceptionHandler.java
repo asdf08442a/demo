@@ -1,7 +1,8 @@
-package com.jiedaibao.demo.web.exception;
+package com.jiedaibao.demo.web.handler;
 
 import java.sql.SQLException;
 
+import com.jiedaibao.demo.api.dto.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
@@ -13,7 +14,6 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.jiedaibao.demo.biz.bean.Response;
 import com.jiedaibao.demo.common.exception.BusinessException;
 
 @ControllerAdvice
@@ -25,13 +25,13 @@ public class CommonExceptionHandler {
 	@ExceptionHandler(SQLException.class)
 	public Response handleSqlExp(SQLException e) {
 		log.error("数据库异常 ", e);
-		return new Response().failure(e.getMessage());
+		return new Response().failure("service is too busy");
 	}
 	
 	@ExceptionHandler(BusinessException.class)
 	public Response handleBizExp(BusinessException e) {
 		log.error("业务异常 ", e);
-		return new Response().failure(e.getMessage());
+		return new Response().failure("service is too busy");
 	}
 
 	/**

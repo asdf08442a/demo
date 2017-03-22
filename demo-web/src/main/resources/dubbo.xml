@@ -12,5 +12,6 @@
     <dubbo:monitor protocol="registry"/>
     <dubbo:provider threadpool="fixed" threads="500" timeout="3000"  accepts="5000"/>
 
-	
+    <!--<dubbo:service interface="" ref="tradeUIService" cluster="failover" retries="0" version="1.0.0" />-->
+    <!--<dubbo:reference id="receivingOrderInfoService" interface="" version="1.0.0" protocol="dubbo" check="false"/>-->
 </beans>
