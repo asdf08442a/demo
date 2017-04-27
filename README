@@ -1,11 +1,12 @@
 #优雅的后端SSM架构(Spring+SpringMVC+Mybatis）
 - Maven
 - Lombok（代码简洁）
-- Spring（IOC DI AOP 声明式事务处理）
-- SpringMVC（支持Restful风格）
-- Mybatis + MybatisPlus
+- Log4j2
+- Spring（IOC AOP Transtraction注解事务）
+- SpringMVC（支持Restful风格，Exception统一管理）
 - Druid（数据源配置 sql防注入 sql性能监控)
+- Mybatis + MybatisPlus
 - Hibernate Validate（参数校验）
 - Spring Task时间调度
 - Redis缓存（ProtoStuff序列化）
-- 统一的异常处理
+- Dubbo（分布式服务框架）

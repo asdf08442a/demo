@@ -23,7 +23,7 @@
         <dubbo_version>2.4.9</dubbo_version>
         <spring_version>4.3.4.RELEASE</spring_version>
         <druid.version>1.0.26</druid.version>
-        <mybaitsplus.version>2.0.1</mybaitsplus.version>
+        <mybaitsplus.version>2.0.7</mybaitsplus.version>
         <mysql.version>5.1.38</mysql.version>
         <junit_version>4.12</junit_version>
         <rocketmq_version>3.2.7.20151226</rocketmq_version>

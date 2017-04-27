@@ -1,11 +1,11 @@
 package com.demo.web.controller;
 
 import com.baomidou.mybatisplus.mapper.EntityWrapper;
-import com.demo.api.dto.response.Response;
 import com.demo.common.enums.DateStyle;
 import com.demo.common.util.DateUtils;
 import com.demo.dao.entity.User;
 import com.demo.service.IUserService;
+import com.demo.web.dto.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -35,7 +35,7 @@ public class UserController {
 
     @RequestMapping(value = "/get", method = RequestMethod.POST)
     public Response get(@NotNull @RequestBody String id, BindingResult bindingResult) {
-        User user = userService.selectOne(new EntityWrapper<User>().eq("id","1"));
+        User user = userService.selectOne(new EntityWrapper<User>().eq("id", "1"));
         return new Response().success(user);
     }
 

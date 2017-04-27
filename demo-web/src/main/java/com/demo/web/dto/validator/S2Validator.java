@@ -1,4 +1,4 @@
-package com.demo.api.validator;
+package com.demo.web.dto.validator;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

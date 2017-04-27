@@ -2,7 +2,7 @@ package com.demo.web.handler;
 
 import java.sql.SQLException;
 
-import com.demo.api.dto.response.Response;
+import com.demo.web.dto.response.Response;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;

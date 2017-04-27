@@ -1,5 +1,7 @@
-package com.demo.api.dto.response;
+package com.demo.web.dto.response;
 
+import lombok.Getter;
+import lombok.Setter;
 import lombok.ToString;
 
 import java.io.Serializable;
@@ -9,6 +11,8 @@ import java.io.Serializable;
  * created by jinzg on 2016年12月18日
  */
 @ToString
+@Getter
+@Setter
 public class Response implements Serializable {
     private static final long serialVersionUID = -2018568289481468330L;
     private static final String OK = "ok";
@@ -36,18 +40,6 @@ public class Response implements Serializable {
     public Response failure(String message) {
         this.meta = new Meta(false, message);
         return this;
-    }
-
-    public Meta getMeta() {
-        return meta;
-    }
-
-    public Object getData() {
-        return data;
-    }
-
-    public void setData(Object data) {
-        this.data = data;
     }
 
     @ToString
