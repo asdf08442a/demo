@@ -1,4 +1,7 @@
-#优雅的后端SSM架构(Spring+SpringMVC+Mybatis）
+## 简介 
+优雅的后端SSM架构(Spring+SpringMVC+Mybatis）
+
+## 技术
 - Maven
 - Lombok（代码简洁）
 - Slf4j + Log4j2
